@@ -19,7 +19,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity(name = "pitch")
-//@DiscriminatorValue("1")
 @PrimaryKeyJoinColumn(name = "task_id")
 public class Pitch extends Task implements Comparable<Pitch> {
 
@@ -48,23 +47,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	private Stage stage;
 	
 	
-
-	public Integer getId() {
-		return task_id;
-	}
-
-
-
-	public void setId(Integer task_id) {
-		this.task_id = task_id;
-	}
-
-
-
 	public String getAuthorInfo() {
 		return authorInfo;
 	}
-
 
 
 	public void setAuthorInfo(String authorInfo) {
@@ -72,11 +57,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	}
 
 
-
 	public String getTitle() {
 		return title;
 	}
-
 
 
 	public void setTitle(String title) {
@@ -84,11 +67,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	}
 
 
-
 	public java.sql.Date getTentativeCompletionDate() {
 		return tentativeCompletionDate;
 	}
-
 
 
 	public void setTentativeCompletionDate(java.sql.Date tentativeCompletionDate) {
@@ -96,11 +77,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	}
 
 
-
 	public StoryType getStoryType() {
 		return storyType;
 	}
-
 
 
 	public void setStoryType(StoryType storyType) {
@@ -108,11 +87,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	}
 
 
-
 	public Genre getGenre() {
 		return genre;
 	}
-
 
 
 	public void setGenre(Genre genre) {
@@ -120,11 +97,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	}
 
 
-
 	public String getTagLine() {
 		return tagLine;
 	}
-
 
 
 	public void setTagLine(String tagLine) {
@@ -132,11 +107,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	}
 
 
-
 	public String getDescription() {
 		return description;
 	}
-
 
 
 	public void setDescription(String description) {
@@ -144,11 +117,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	}
 
 
-
 	public byte[] getAttachments() {
 		return attachments;
 	}
-
 
 
 	public void setAttachments(byte[] attachments) {
@@ -156,11 +127,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	}
 
 
-
 	public boolean isOnHold() {
 		return onHold;
 	}
-
 
 
 	public void setOnHold(boolean onHold) {
@@ -168,11 +137,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	}
 
 
-
 	public java.sql.Date getTimestamp() {
 		return timestamp;
 	}
-
 
 
 	public void setTimestamp(java.sql.Date timestamp) {
@@ -180,11 +147,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	}
 
 
-
 	public Stage getStage() {
 		return stage;
 	}
-
 
 
 	public void setStage(Stage stage) {
@@ -197,11 +162,10 @@ public class Pitch extends Task implements Comparable<Pitch> {
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + Arrays.hashCode(attachments);
-		result = prime * result + Objects.hash(authorInfo, description, genre, task_id, onHold, storyType, tagLine,
+		result = prime * result + Objects.hash(authorInfo, description, genre, onHold, stage, storyType, tagLine,
 				tentativeCompletionDate, timestamp, title);
 		return result;
 	}
-
 
 
 	@Override
@@ -215,12 +179,11 @@ public class Pitch extends Task implements Comparable<Pitch> {
 		Pitch other = (Pitch) obj;
 		return Arrays.equals(attachments, other.attachments) && Objects.equals(authorInfo, other.authorInfo)
 				&& Objects.equals(description, other.description) && Objects.equals(genre, other.genre)
-				&& Objects.equals(task_id, other.task_id) && onHold == other.onHold && Objects.equals(storyType, other.storyType)
-				&& Objects.equals(tagLine, other.tagLine)
+				&& onHold == other.onHold && Objects.equals(stage, other.stage)
+				&& Objects.equals(storyType, other.storyType) && Objects.equals(tagLine, other.tagLine)
 				&& Objects.equals(tentativeCompletionDate, other.tentativeCompletionDate)
 				&& Objects.equals(timestamp, other.timestamp) && Objects.equals(title, other.title);
 	}
-
 
 
 	@Override
@@ -228,5 +191,4 @@ public class Pitch extends Task implements Comparable<Pitch> {
 		return this.getId().compareTo(o.getId());
 	}
 
-	
 }

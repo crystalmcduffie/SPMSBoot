@@ -9,12 +9,12 @@ public class Message {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	/*@OneToMany
+	@ManyToOne
 	@JoinColumn(name="sender_id")
 	private Person sender;
-	/*@OneToMany
+	@ManyToOne
 	@JoinColumn(name="receiver_id")
-	private Person receiver;*/
+	private Person receiver;
 	@ManyToOne
 	@JoinColumn(name="task_id")
 	private Task task;

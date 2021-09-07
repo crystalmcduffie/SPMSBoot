@@ -29,6 +29,14 @@ public class Person {
 	@ManyToOne
 	@JoinColumn(name="role_id")
 	private Role role;
+	/*@OneToMany
+	@JoinTable(name="message",
+			joinColumns=@JoinColumn(name="sender_id"))
+	private Set<Message> sentMessages;
+	@OneToMany
+	@JoinTable(name="message",
+			joinColumns=@JoinColumn(name="receiver_id"))
+	private Set<Message> receivedMessages;
 	/*@ManyToMany
 	@JoinTable(name="assignment",
 			joinColumns=@JoinColumn(name="editor_id"),
@@ -60,27 +68,27 @@ public class Person {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	/*public Set<Task> getAssignments() {
-		return assignments;
+	public Role getRole() {
+		return role;
 	}
-	public void setAssignments(Set<Task> assignments) {
-		this.assignments = assignments;
+	public void setRole(Role role) {
+		this.role = role;
 	}
-	public Set<Pitch> getPitches() {
-		return pitches;
+	/*public Set<Message> getSentMessages() {
+		return sentMessages;
 	}
-	public void setPitches(Set<Pitch> pitches) {
-		this.pitches = pitches;
+	public void setSentMessages(Set<Message> sentMessages) {
+		this.sentMessages = sentMessages;
 	}
-	/*public Set<Draft> getDrafts() {
-		return drafts;
+	public Set<Message> getReceivedMessages() {
+		return receivedMessages;
 	}
-	public void setDrafts(Set<Draft> drafts) {
-		this.drafts = drafts;
+	public void setReceivedMessages(Set<Message> receivedMessages) {
+		this.receivedMessages = receivedMessages;
 	}*/
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, password, username);
+		return Objects.hash(id, password, role, username);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -91,9 +99,8 @@ public class Person {
 		if (getClass() != obj.getClass())
 			return false;
 		Person other = (Person) obj;
-		return Objects.equals(id, other.id)
-				&& Objects.equals(password, other.password)
-				&& Objects.equals(username, other.username);
+		return Objects.equals(id, other.id) && Objects.equals(password, other.password)
+				&& Objects.equals(role, other.role) && Objects.equals(username, other.username);
 	}
 	
 }

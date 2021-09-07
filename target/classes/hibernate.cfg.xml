@@ -4,7 +4,7 @@
 	<session-factory>
 		<!-- set up connection info -->
 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-		<property name="hibernate.connection.url">jdbc:postgresql://rev2102.co69bspj6jpk.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema="SPMS"</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://rev2102.co69bspj6jpk.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema="SPMS2"</property>
 		<property name="hibernate.connection.username">postgres</property>
 		<property name="hibernate.connection.password">dadAtabAsebabY</property>
 		
@@ -15,34 +15,21 @@
 		<property name="use_sql_comments">true</property>
 		
 		<!-- tell hibernate where to find our mappings -->
-		<mapping class="com.revature.beans.Author"></mapping>
-		<mapping class="com.revature.beans.AuthorDraft"></mapping>
-		<mapping class="com.revature.beans.AuthorPitch"></mapping>
-		<mapping class="com.revature.beans.DChangeA2E"></mapping>
-		<mapping class="com.revature.beans.DChangeE2A"></mapping>
-		<mapping class="com.revature.beans.DMessageA2E"></mapping>
-		<mapping class="com.revature.beans.DMessageE2A"></mapping>
-		<mapping class="com.revature.beans.Draft"></mapping>
-		<mapping class="com.revature.beans.DraftChange"></mapping>
-		<mapping class="com.revature.beans.DraftLog"></mapping>
-		<mapping class="com.revature.beans.DraftMessage"></mapping>
-		<mapping class="com.revature.beans.DraftStage"></mapping>
-		<mapping class="com.revature.beans.Editor"></mapping>
-		<mapping class="com.revature.beans.EditorPitch"></mapping>
-		<mapping class="com.revature.beans.EditorStatus"></mapping>
-		<mapping class="com.revature.beans.Genre"></mapping>
-		<mapping class="com.revature.beans.GenreCommittee"></mapping>
-		<mapping class="com.revature.beans.Pitch"></mapping>
-		<mapping class="com.revature.beans.PitchLog"></mapping>
-		<mapping class="com.revature.beans.PitchMessage"></mapping>
-		<mapping class="com.revature.beans.PitchReview"></mapping>
-		<mapping class="com.revature.beans.PitchStage"></mapping>
-		<mapping class="com.revature.beans.PMessageA2E"></mapping>
-		<mapping class="com.revature.beans.PMessageE2A"></mapping>
-		<mapping class="com.revature.beans.PMessageE2E"></mapping>
-		<mapping class="com.revature.beans.PReviewA2E"></mapping>
-		<mapping class="com.revature.beans.PReviewE2A"></mapping>
-		<mapping class="com.revature.beans.PReviewE2E"></mapping>
-		<mapping class="com.revature.beans.StoryType"></mapping>
+		<mapping class="com.SPMS.beans.Assignment"></mapping>
+		<mapping class="com.SPMS.beans.Author"></mapping>
+		<mapping class="com.SPMS.beans.Draft"></mapping>
+		<mapping class="com.SPMS.beans.Editor"></mapping>
+		<mapping class="com.SPMS.beans.EditorStatus"></mapping>
+		<mapping class="com.SPMS.beans.Genre"></mapping>
+		<mapping class="com.SPMS.beans.GenreCommittee"></mapping>
+		<mapping class="com.SPMS.beans.Message"></mapping>
+		<mapping class="com.SPMS.beans.Person"></mapping>
+		<mapping class="com.SPMS.beans.Pitch"></mapping>
+		<mapping class="com.SPMS.beans.Request"></mapping>
+		<mapping class="com.SPMS.beans.Role"></mapping>
+		<mapping class="com.SPMS.beans.Stage"></mapping>
+		<mapping class="com.SPMS.beans.StoryType"></mapping>
+		<mapping class="com.SPMS.beans.Task"></mapping>
+		<mapping class="com.SPMS.beans.TaskType"></mapping>
 	</session-factory>
 </hibernate-configuration>
