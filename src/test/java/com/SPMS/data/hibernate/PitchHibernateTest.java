@@ -1,4 +1,4 @@
-package com.revature.data.hibernate;
+package com.SPMS.data.hibernate;
 
 import java.util.List;
 

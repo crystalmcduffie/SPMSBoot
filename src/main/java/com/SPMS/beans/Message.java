@@ -9,15 +9,19 @@ public class Message {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	@Column(name="sender_id")
+	/*@OneToMany
+	@JoinColumn(name="sender_id")
 	private Person sender;
-	@Column(name="receiver_id")
-	private Person receiver;
-	@Column(name="task_id")
+	/*@OneToMany
+	@JoinColumn(name="receiver_id")
+	private Person receiver;*/
+	@ManyToOne
+	@JoinColumn(name="task_id")
 	private Task task;
 	@Column(name="timestamp")
 	private java.sql.Date timestamp;
-	@Column(name="request_id")
+	@OneToOne
+	@JoinColumn(name="request_id")
 	private Request request;
 	private boolean read;
 	public Integer getId() {

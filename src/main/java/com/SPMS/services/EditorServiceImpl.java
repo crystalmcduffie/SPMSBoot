@@ -1,17 +1,21 @@
 package com.SPMS.services;
 
+import java.util.List;
 import java.util.Set;
 
-import com.SPMS.beans.Editor;
-import com.SPMS.data.DAOFactory;
-import com.SPMS.data.EditorDAO;
-import com.SPMS.data.hibernate.EditorHibernate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.SPMS.beans.Editor;
+import com.SPMS.data.EditorDAO;
+
+@Service
 public class EditorServiceImpl implements EditorService {
-	private EditorDAO editorDAO;
+	EditorDAO editorDAO;
 	
-	public EditorServiceImpl() {
-		editorDAO  = DAOFactory.getEditorDAO();
+	@Autowired
+	public EditorServiceImpl(EditorDAO e) {
+		this.editorDAO = e;
 	}
 	
 	public Editor getByUsername(String username) {
@@ -19,14 +23,14 @@ public class EditorServiceImpl implements EditorService {
 	}
 
 	@Override
-	public void update(Editor ed) {
-		editorDAO.update(ed);
+	public void update(Editor e) {
+		editorDAO.save(e);
 		
 	}
 
 	@Override
-	public Set<Editor> getAll() {
-		return editorDAO.getAll();
+	public List<Editor> getAll() {
+		return editorDAO.findAll();
 	}
 	
 }

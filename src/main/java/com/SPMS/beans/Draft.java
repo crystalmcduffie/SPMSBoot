@@ -1,5 +1,6 @@
 package com.SPMS.beans;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,20 +9,15 @@ import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 @Entity
 @Table (name = "draft")
+//@DiscriminatorValue("1")
+@PrimaryKeyJoinColumn(name = "task_id")
 public class Draft extends Task implements Comparable<Draft>{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+
 	private String draft;
-	@ManyToOne
-	@JoinColumn (name = "story_type_id")
-	private StoryType storyType;
-	@ManyToOne
-	@JoinColumn (name = "genre_id")
-	private Genre genre;
 	@ManyToOne
 	@JoinColumn (name="stage_id")
 	private Stage stage;
@@ -39,10 +35,10 @@ public class Draft extends Task implements Comparable<Draft>{
 		this.stage = stage;
 	}
 	public Integer getId() {
-		return id;
+		return task_id;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId(Integer task_id) {
+		this.task_id = task_id;
 	}
 	public StoryType getStoryType() {
 		return storyType;
@@ -58,7 +54,7 @@ public class Draft extends Task implements Comparable<Draft>{
 	}
 	@Override
 	public String toString() {
-		return "Draft [id=" + id + ", draft=" + draft + ", storyType=" + storyType + ", genre=" + genre + ", stage="
+		return "Draft [task_id=" + task_id + ", draft=" + draft + ", storyType=" + storyType + ", genre=" + genre + ", stage="
 				+ stage + "]";
 	}
 	@Override
@@ -67,7 +63,7 @@ public class Draft extends Task implements Comparable<Draft>{
 		int result = 1;
 		result = prime * result + ((draft == null) ? 0 : draft.hashCode());
 		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((task_id == null) ? 0 : task_id.hashCode());
 		result = prime * result + ((stage == null) ? 0 : stage.hashCode());
 		result = prime * result + ((storyType == null) ? 0 : storyType.hashCode());
 		return result;
@@ -91,10 +87,10 @@ public class Draft extends Task implements Comparable<Draft>{
 				return false;
 		} else if (!genre.equals(other.genre))
 			return false;
-		if (id == null) {
-			if (other.id != null)
+		if (task_id == null) {
+			if (other.task_id != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!task_id.equals(other.task_id))
 			return false;
 		if (stage == null) {
 			if (other.stage != null)

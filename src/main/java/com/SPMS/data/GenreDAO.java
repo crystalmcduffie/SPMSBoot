@@ -9,6 +9,6 @@ import com.SPMS.beans.GenreCommittee;
 
 @Repository
 public interface GenreDAO extends JpaRepository<Genre, Integer>{
-	public Genre getGenre(String name);
+	public Genre findByName(String name);
 
 }

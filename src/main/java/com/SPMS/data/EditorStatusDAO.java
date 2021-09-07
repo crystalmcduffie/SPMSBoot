@@ -4,6 +4,6 @@ import org.springframework.stereotype.Repository;
 import com.SPMS.beans.EditorStatus;
 
 @Repository
-public interface EditorStatusDAO extends JpaRepository<EditorStatusDAO, Integer>{
+public interface EditorStatusDAO extends JpaRepository<EditorStatus, Integer>{
 
 }

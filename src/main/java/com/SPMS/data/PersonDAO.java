@@ -5,8 +5,8 @@ import com.SPMS.exceptions.NonUniqueUsernameException;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-public interface PersonDAO {
+@Repository
+public interface PersonDAO extends JpaRepository<Person,Integer>{
 	public Person getByUsername(String username);
-	public Person add(Person p) throws NonUniqueUsernameException;
 	
 }

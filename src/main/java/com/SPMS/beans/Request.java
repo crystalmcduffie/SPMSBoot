@@ -10,7 +10,7 @@ public class Request {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	@ManyToOne
-	@Column(name="task_id")
+	@JoinColumn(name="task_id")
 	private Task task;
 	private boolean draft;
 	private boolean complete;

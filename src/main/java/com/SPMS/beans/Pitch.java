@@ -6,6 +6,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,12 +16,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity(name = "pitch")
+//@DiscriminatorValue("1")
+@PrimaryKeyJoinColumn(name = "task_id")
 public class Pitch extends Task implements Comparable<Pitch> {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+
 	@Column (name ="author_info")
 	private String authorInfo;
 	@Column (name = "title")
@@ -48,13 +50,13 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	
 
 	public Integer getId() {
-		return id;
+		return task_id;
 	}
 
 
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId(Integer task_id) {
+		this.task_id = task_id;
 	}
 
 
@@ -195,7 +197,7 @@ public class Pitch extends Task implements Comparable<Pitch> {
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + Arrays.hashCode(attachments);
-		result = prime * result + Objects.hash(authorInfo, description, genre, id, onHold, storyType, tagLine,
+		result = prime * result + Objects.hash(authorInfo, description, genre, task_id, onHold, storyType, tagLine,
 				tentativeCompletionDate, timestamp, title);
 		return result;
 	}
@@ -213,7 +215,7 @@ public class Pitch extends Task implements Comparable<Pitch> {
 		Pitch other = (Pitch) obj;
 		return Arrays.equals(attachments, other.attachments) && Objects.equals(authorInfo, other.authorInfo)
 				&& Objects.equals(description, other.description) && Objects.equals(genre, other.genre)
-				&& Objects.equals(id, other.id) && onHold == other.onHold && Objects.equals(storyType, other.storyType)
+				&& Objects.equals(task_id, other.task_id) && onHold == other.onHold && Objects.equals(storyType, other.storyType)
 				&& Objects.equals(tagLine, other.tagLine)
 				&& Objects.equals(tentativeCompletionDate, other.tentativeCompletionDate)
 				&& Objects.equals(timestamp, other.timestamp) && Objects.equals(title, other.title);
