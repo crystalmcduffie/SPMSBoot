@@ -24,6 +24,8 @@ public class Message {
 	@JoinColumn(name="request_id")
 	private Request request;
 	private boolean read;
+	private String title;
+	private String message;
 	public Integer getId() {
 		return id;
 	}
@@ -66,9 +68,21 @@ public class Message {
 	public void setRead(boolean read) {
 		this.read = read;
 	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, read, receiver, request, sender, task, timestamp);
+		return Objects.hash(id, message, read, receiver, request, sender, task, timestamp, title);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -79,9 +93,10 @@ public class Message {
 		if (getClass() != obj.getClass())
 			return false;
 		Message other = (Message) obj;
-		return Objects.equals(id, other.id) && read == other.read && Objects.equals(receiver, other.receiver)
-				&& Objects.equals(request, other.request) && Objects.equals(sender, other.sender)
-				&& Objects.equals(task, other.task) && Objects.equals(timestamp, other.timestamp);
+		return Objects.equals(id, other.id) && Objects.equals(message, other.message) && read == other.read
+				&& Objects.equals(receiver, other.receiver) && Objects.equals(request, other.request)
+				&& Objects.equals(sender, other.sender) && Objects.equals(task, other.task)
+				&& Objects.equals(timestamp, other.timestamp) && Objects.equals(title, other.title);
 	}
 	
 	

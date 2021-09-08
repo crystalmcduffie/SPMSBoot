@@ -18,14 +18,13 @@ import com.SPMS.utils.HibernateUtil;
 
 @Repository
 public class MessageHibernate extends SimpleJpaRepository<Message, Integer> implements MessageDAO{
-    private EntityManager entityManager;
+	private HibernateUtil hu = HibernateUtil.getHibernateUtil();
+	private EntityManager entityManager;
 
     public MessageHibernate(EntityManager em) {
         super(Message.class, em);
         this.entityManager = em;
     }
-
-	private HibernateUtil hu = HibernateUtil.getHibernateUtil();
 	
 	public List<Message> getSentMessages(Integer id){
 		Session s = hu.getSession();

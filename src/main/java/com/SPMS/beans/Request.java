@@ -24,8 +24,6 @@ public class Request {
 	private boolean tagLine;
 	private boolean description;
 	private boolean attachments;
-	@Column (name = "on_hold")
-	private boolean onHold;
 	public Integer getId() {
 		return id;
 	}
@@ -86,15 +84,9 @@ public class Request {
 	public void setAttachments(boolean attachments) {
 		this.attachments = attachments;
 	}
-	public boolean isOnHold() {
-		return onHold;
-	}
-	public void setOnHold(boolean onHold) {
-		this.onHold = onHold;
-	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(attachments, authorInfo, complete, description, draft, id, onHold, tagLine, task,
+		return Objects.hash(attachments, authorInfo, complete, description, draft, id, tagLine, task,
 				tentativeCompletionDate, title);
 	}
 	@Override
@@ -108,7 +100,7 @@ public class Request {
 		Request other = (Request) obj;
 		return attachments == other.attachments && authorInfo == other.authorInfo && complete == other.complete
 				&& description == other.description && draft == other.draft && Objects.equals(id, other.id)
-				&& onHold == other.onHold && tagLine == other.tagLine && Objects.equals(task, other.task)
+				&& tagLine == other.tagLine && Objects.equals(task, other.task)
 				&& tentativeCompletionDate == other.tentativeCompletionDate && title == other.title;
 	}
 	

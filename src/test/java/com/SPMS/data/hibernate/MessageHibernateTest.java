@@ -11,23 +11,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.SPMS.beans.Draft;
-import com.SPMS.beans.Editor;
 import com.SPMS.beans.Message;
 import com.SPMS.beans.Person;
-import com.SPMS.beans.Pitch;
-import com.SPMS.data.EditorDAO;
-import com.SPMS.data.MessageDAO;
-import com.SPMS.data.hibernate.EditorHibernate;
 import com.SPMS.services.EditorService;
-import com.SPMS.services.EditorServiceImpl;
 import com.SPMS.services.PersonService;
 
 @SpringBootTest
-public class MessageTest {
-	//private static EditorService editorServ;
+public class MessageHibernateTest {
 	
-	private Logger log = Logger.getLogger(MessageTest.class);
+	private static Logger log = Logger.getLogger(MessageHibernateTest.class);
 	
 	@Autowired
 	EditorService editorService;
@@ -36,19 +28,24 @@ public class MessageTest {
 	@Autowired
 	MessageHibernate messageDAO;
 
-	
-	
 	@Test
 	public void getMessages() {
 		Person p = personService.getByUsername("gabriel");
-		System.out.println(p.getUsername() + " " + p.getPassword() );
+		log.debug(p.getUsername() + " " + p.getPassword() );
 		List<Message> receivedMessages = messageDAO.getReceivedMessages(p.getId());
 		List<Message> sentMessages = messageDAO.getSentMessages(p.getId());
-		System.out.println(receivedMessages);
-		System.out.println(sentMessages);
+		printMessages(sentMessages);
+		printMessages(receivedMessages);
 	}
 
 
-
+	public static void printMessages(List<Message> messages) {
+		for(Message m : messages) {
+			log.info("Sender: " + m.getSender().getUsername());
+			log.info("Receiver: " + m.getReceiver().getUsername());
+			log.info("Title: " + m.getTitle());
+			log.info("Message: " + m.getMessage());
+		}
+	}
 
 }

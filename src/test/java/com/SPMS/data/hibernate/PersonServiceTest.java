@@ -22,9 +22,8 @@ import com.SPMS.services.PersonService;
 
 @SpringBootTest
 public class PersonServiceTest {
-	//private static EditorService editorServ;
 	
-	private Logger log = Logger.getLogger(PersonServiceTest.class);
+	private static Logger log = Logger.getLogger(PersonServiceTest.class);
 	
 	@Autowired
 	EditorService editorService;
@@ -36,13 +35,13 @@ public class PersonServiceTest {
 	@Test
 	public void getPerson() {
 		Person p = personService.getByUsername("kate");
-		System.out.println(p.getUsername() + " " + p.getPassword() );
+		log.debug(p.getUsername() + " " + p.getPassword() );
 	}
 
 	@Test
 	public void getEditor() {
 		Editor e = editorService.getByUsername("kate");
-		System.out.println(e.getUsername() + " " + e.getPassword() + " " + e.getAssignments());
+		log.debug(e.getUsername() + " " + e.getPassword() + " " + e.getAssignments());
 	}
 
 
