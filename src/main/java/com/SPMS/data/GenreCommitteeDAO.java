@@ -8,4 +8,5 @@ import com.SPMS.beans.GenreCommittee;
 @Repository
 public interface GenreCommitteeDAO extends JpaRepository<GenreCommittee, Integer>{
 	public List<GenreCommittee> findByEditorId(Integer id);
+	public List<GenreCommittee> findByGenre(Integer id);
 }

@@ -1,4 +1,4 @@
-package com.SPMS.data.hibernate;
+package com.SPMS.services;
 
 import java.sql.Date;
 import java.util.HashSet;

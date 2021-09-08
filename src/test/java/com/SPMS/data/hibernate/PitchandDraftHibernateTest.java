@@ -6,12 +6,14 @@ import org.apache.log4j.Logger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.SPMS.beans.Draft;
 import com.SPMS.beans.Person;
 import com.SPMS.beans.Pitch;
 import com.SPMS.services.PersonService;
 
+@SpringBootTest
 public class PitchandDraftHibernateTest {
 	private static Logger log = Logger.getLogger(PitchandDraftHibernateTest.class);
 	
@@ -22,6 +24,7 @@ public class PitchandDraftHibernateTest {
 	@Autowired
 	DraftHibernate draftDAO;
 	
+	@Test
 	public void getPitches() {
 		Person p = personService.getByUsername("derrick");
 		log.debug(p.getUsername() + " " + p.getPassword() );
@@ -29,6 +32,8 @@ public class PitchandDraftHibernateTest {
 		List<Draft> drafts = draftDAO.getAuthorDrafts(pitches);
 		log.debug(pitches);
 		log.debug(drafts);
+		printPitches(pitches);
+		printDrafts(drafts);
 	}
 	
 	public static void printPitches(List<Pitch> pitches) {

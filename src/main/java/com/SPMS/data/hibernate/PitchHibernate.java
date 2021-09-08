@@ -13,12 +13,15 @@ import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.SPMS.beans.Pitch;
 import com.SPMS.data.PitchDAO;
 import com.SPMS.utils.HibernateUtil;
 
 import org.hibernate.Transaction;
+
+@Repository
 public class PitchHibernate extends SimpleJpaRepository<Pitch, Integer> implements PitchDAO {
 	private HibernateUtil hu = HibernateUtil.getHibernateUtil();
     private EntityManager entityManager;

@@ -1,0 +1,9 @@
+2021-09-08 12:05:42 DEBUG MessageHibernateTest:34 - gabriel pass
+2021-09-08 12:05:45 INFO  MessageHibernateTest:44 - Sender: gabriel
+2021-09-08 12:05:45 INFO  MessageHibernateTest:45 - Receiver: crystal
+2021-09-08 12:05:45 INFO  MessageHibernateTest:46 - Title: look at pitch id:1 please
+2021-09-08 12:05:45 INFO  MessageHibernateTest:47 - Message: I think this title needs revision.
+2021-09-08 12:05:45 INFO  MessageHibernateTest:44 - Sender: gabriel
+2021-09-08 12:05:45 INFO  MessageHibernateTest:45 - Receiver: crystal
+2021-09-08 12:05:45 INFO  MessageHibernateTest:46 - Title: Need additional details
+2021-09-08 12:05:45 INFO  MessageHibernateTest:47 - Message: Hi Crystal. I like your novel so far. I am a little lost on its description. What is a southern identity? Someone will want to know this before picking up the book and reading it. Thanks.

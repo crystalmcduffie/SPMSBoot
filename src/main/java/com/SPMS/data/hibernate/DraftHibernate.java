@@ -8,12 +8,14 @@ import javax.persistence.EntityManager;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.SPMS.beans.Draft;
 import com.SPMS.beans.Pitch;
 import com.SPMS.data.DraftDAO;
 import com.SPMS.utils.HibernateUtil;
 
+@Repository
 public class DraftHibernate extends SimpleJpaRepository<Draft,Integer> implements DraftDAO{
 	private HibernateUtil hu = HibernateUtil.getHibernateUtil();
 	private EntityManager entityManager;
