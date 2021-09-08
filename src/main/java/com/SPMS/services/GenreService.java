@@ -1,5 +1,6 @@
 package com.SPMS.services;
 
+import java.util.List;
 import java.util.Set;
 
 import com.SPMS.beans.Draft;
@@ -8,9 +9,6 @@ import com.SPMS.beans.Genre;
 import com.SPMS.beans.GenreCommittee;
 
 public interface GenreService {
-	public Set<GenreCommittee> getGenreCommittee(Genre g);
-	public Set<Set<GenreCommittee>> getAllGenreCommittees();
-	public Genre getGenre (String name);
-	public Set<Genre> getAllGenres();
-	public Set<Draft> getDraftsInGenre(Editor e);
+	public List<GenreCommittee> getGenreCommitteesByGenre(Genre g);
+	public List<GenreCommittee> getGenreCommitteesByEditor(Editor e);
 }

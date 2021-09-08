@@ -29,7 +29,7 @@ public class DraftHibernate extends SimpleJpaRepository<Draft,Integer> implement
 		Session s = hu.getSession();
 		List<Draft> drafts = new ArrayList<>();
 		for(Pitch p : pitches) {
-			String query = "FROM Draft where pitch_id: id";
+			String query = "FROM Draft where pitch_id = :id";
 			Query<Draft> q = s.createQuery(query, Draft.class);
 			q.setParameter("id", p.getId());
 			Draft draft = q.getSingleResult();

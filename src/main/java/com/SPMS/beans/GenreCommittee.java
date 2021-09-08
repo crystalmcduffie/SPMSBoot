@@ -21,7 +21,7 @@ public class GenreCommittee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@ManyToOne
-	@JoinColumn (name = "genre_id")
+	@JoinColumn(name="genre_id")
 	private Genre genre;
 	@ManyToOne
 	@JoinColumn (name = "editor_id")

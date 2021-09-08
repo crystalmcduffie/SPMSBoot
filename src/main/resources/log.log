@@ -31,3 +31,76 @@
 2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:59 - Id: 2
 2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:60 - Task type: draft
 2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:61 - Draft: Hold on tight, you are in for a ride.
+2021-09-08 12:23:47 DEBUG GenreHibernateTest:40 - gabriel pass
+2021-09-08 12:27:50 DEBUG GenreHibernateTest:40 - gabriel pass
+2021-09-08 12:31:22 DEBUG GenreHibernateTest:40 - gabriel pass
+2021-09-08 12:37:16 DEBUG GenreHibernateTest:40 - gabriel pass
+2021-09-08 12:40:34 DEBUG GenreHibernateTest:40 - gabriel pass
+2021-09-08 13:07:15 DEBUG MessageHibernateTest:34 - gabriel pass
+2021-09-08 13:07:17 INFO  MessageHibernateTest:44 - Sender: gabriel
+2021-09-08 13:07:17 INFO  MessageHibernateTest:45 - Receiver: crystal
+2021-09-08 13:07:17 INFO  MessageHibernateTest:46 - Title: look at pitch id:1 please
+2021-09-08 13:07:17 INFO  MessageHibernateTest:47 - Message: I think this title needs revision.
+2021-09-08 13:07:17 INFO  MessageHibernateTest:44 - Sender: gabriel
+2021-09-08 13:07:17 INFO  MessageHibernateTest:45 - Receiver: crystal
+2021-09-08 13:07:17 INFO  MessageHibernateTest:46 - Title: Need additional details
+2021-09-08 13:07:17 INFO  MessageHibernateTest:47 - Message: Hi Crystal. I like your novel so far. I am a little lost on its description. What is a southern identity? Someone will want to know this before picking up the book and reading it. Thanks.
+2021-09-08 13:10:20 DEBUG GenreHibernateTest:40 - gabriel pass
+2021-09-08 13:14:58 DEBUG MessageHibernateTest:34 - gabriel pass
+2021-09-08 13:15:00 INFO  MessageHibernateTest:44 - Sender: gabriel
+2021-09-08 13:15:00 INFO  MessageHibernateTest:45 - Receiver: crystal
+2021-09-08 13:15:00 INFO  MessageHibernateTest:46 - Title: look at pitch id:1 please
+2021-09-08 13:15:00 INFO  MessageHibernateTest:47 - Message: I think this title needs revision.
+2021-09-08 13:15:00 INFO  MessageHibernateTest:44 - Sender: gabriel
+2021-09-08 13:15:00 INFO  MessageHibernateTest:45 - Receiver: crystal
+2021-09-08 13:15:00 INFO  MessageHibernateTest:46 - Title: Need additional details
+2021-09-08 13:15:00 INFO  MessageHibernateTest:47 - Message: Hi Crystal. I like your novel so far. I am a little lost on its description. What is a southern identity? Someone will want to know this before picking up the book and reading it. Thanks.
+2021-09-08 13:35:09 INFO  GenreHibernateTest:68 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:35:09 INFO  GenreHibernateTest:69 - Editor: com.SPMS.beans.Editor@3cc
+2021-09-08 13:35:09 INFO  GenreHibernateTest:70 - Status: com.SPMS.beans.EditorStatus@ca003210
+2021-09-08 13:35:09 INFO  GenreHibernateTest:68 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:35:09 INFO  GenreHibernateTest:69 - Editor: com.SPMS.beans.Editor@3c5
+2021-09-08 13:35:09 INFO  GenreHibernateTest:70 - Status: com.SPMS.beans.EditorStatus@553976dd
+2021-09-08 13:35:09 INFO  GenreHibernateTest:68 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:35:09 INFO  GenreHibernateTest:69 - Editor: com.SPMS.beans.Editor@3c6
+2021-09-08 13:35:09 INFO  GenreHibernateTest:70 - Status: com.SPMS.beans.EditorStatus@553976dd
+2021-09-08 13:35:09 DEBUG GenreHibernateTest:40 - gabriel pass
+2021-09-08 13:35:09 INFO  GenreHibernateTest:68 - Genre: Genre [id=5, name=nonfiction]
+2021-09-08 13:35:09 INFO  GenreHibernateTest:69 - Editor: com.SPMS.beans.Editor@3c2
+2021-09-08 13:35:09 INFO  GenreHibernateTest:70 - Status: com.SPMS.beans.EditorStatus@553976dd
+2021-09-08 13:37:16 INFO  GenreHibernateTest:63 - getGenreCommitteeByGenre Test: 
+2021-09-08 13:37:16 INFO  GenreHibernateTest:70 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:37:16 INFO  GenreHibernateTest:71 - Editor: matthew
+2021-09-08 13:37:16 INFO  GenreHibernateTest:72 - Status: senior
+2021-09-08 13:37:16 INFO  GenreHibernateTest:70 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:37:16 INFO  GenreHibernateTest:71 - Editor: thomas
+2021-09-08 13:37:16 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:37:16 INFO  GenreHibernateTest:70 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:37:16 INFO  GenreHibernateTest:71 - Editor: elizabeth
+2021-09-08 13:37:16 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:37:16 DEBUG GenreHibernateTest:40 - gabriel pass
+2021-09-08 13:37:17 INFO  GenreHibernateTest:46 - getEditorGenreCommittee Test: 
+2021-09-08 13:37:17 INFO  GenreHibernateTest:70 - Genre: Genre [id=5, name=nonfiction]
+2021-09-08 13:37:17 INFO  GenreHibernateTest:71 - Editor: gabriel
+2021-09-08 13:37:17 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:39:25 INFO  GenreHibernateTest:63 - getGenreCommitteeByGenre Test: 
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: matthew
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: senior
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: thomas
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: elizabeth
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:39:25 DEBUG GenreHibernateTest:40 - thomas pass
+2021-09-08 13:39:25 INFO  GenreHibernateTest:46 - getEditorGenreCommittee Test: 
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: thomas
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=3, name=sci-fi]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: thomas
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=4, name=adventure]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: thomas
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: assistant

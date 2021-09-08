@@ -1,4 +1,4 @@
-package com.SPMS.data.hibernate;
+package com.SPMS.services;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,27 +23,26 @@ import com.SPMS.services.EditorService;
 import com.SPMS.services.PersonService;
 
 @SpringBootTest
-public class GenreHibernateTest {
+public class GenreServiceTest {
 	
-	private static Logger log = Logger.getLogger(GenreHibernateTest.class);
+	private static Logger log = Logger.getLogger(GenreServiceTest.class);
 	
 	@Autowired
 	PersonService personService;
 	@Autowired
-	GenreCommitteeHibernate gcDAO;
+	GenreCommitteeDAO gcDAO;
 	@Autowired
 	GenreDAO gDAO;
 
 	@Test
-	public void getEditorGenreCommittee() {
-		Person p = personService.getByUsername("thomas");
+	public void getEditorGenreCommitte() {
+		Person p = personService.getByUsername("gabriel");
 		log.debug(p.getUsername() + " " + p.getPassword() );
-		List<GenreCommittee> gcs = gcDAO.findAllByEditorId(p.getId());
+		List<GenreCommittee> gcs = gcDAO.findByEditorId(p.getId());
 		for(GenreCommittee gc : gcs) {
 			assertEquals(p.getId(), gc.getEditor().getId());
-			assertEquals("thomas", gc.getEditor().getUsername());
+			assertEquals("gabriel", gc.getEditor().getUsername());
 		}
-		log.info("getEditorGenreCommittee Test: ");
 		printGenreCommittees(gcs);
 	}
 	
@@ -56,11 +55,10 @@ public class GenreHibernateTest {
 	
 	@Test
 	public void getGenreCommitteeByGenre() {
-		List<GenreCommittee> gcs = gcDAO.findAllByGenreId(2);
+		List<GenreCommittee> gcs = gcDAO.findByGenreId(2);
 		for(GenreCommittee gc : gcs) {
 			assertEquals("horror", gc.getGenre().getName());
 		}
-		log.info("getGenreCommitteeByGenre Test: ");
 		printGenreCommittees(gcs);
 	}
 
@@ -68,8 +66,8 @@ public class GenreHibernateTest {
 	public static void printGenreCommittees(List<GenreCommittee> gcs) {
 		for(GenreCommittee gc : gcs) {
 			log.info("Genre: " + gc.getGenre());
-			log.info("Editor: " + gc.getEditor().getUsername());
-			log.info("Status: " + gc.getEditorStatus().getName());
+			log.info("Editor: " + gc.getEditor());
+			log.info("Status: " + gc.getEditorStatus());
 		}
 	}
 
