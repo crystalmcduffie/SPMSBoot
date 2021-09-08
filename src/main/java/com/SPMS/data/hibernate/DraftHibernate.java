@@ -25,7 +25,7 @@ public class DraftHibernate extends SimpleJpaRepository<Draft,Integer> implement
 		this.entityManager = em;
 	}
 	
-	public List<Draft> getAuthorDrafts(List<Pitch> pitches){
+	/*public List<Draft> getAuthorDrafts(List<Pitch> pitches){
 		Session s = hu.getSession();
 		List<Draft> drafts = new ArrayList<>();
 		for(Pitch p : pitches) {
@@ -37,7 +37,7 @@ public class DraftHibernate extends SimpleJpaRepository<Draft,Integer> implement
 		}
 		s.close();
 		return drafts;
-	}
+	}*/
 	
 
 }

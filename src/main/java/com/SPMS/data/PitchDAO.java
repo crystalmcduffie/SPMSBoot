@@ -11,6 +11,6 @@ import com.SPMS.beans.Pitch;
 
 @Repository
 public interface PitchDAO extends JpaRepository<Pitch, Integer>{
-	//public List<Pitch> findByAuthorId(Integer id);
+	public List<Pitch> findByAuthorId(Integer id);
 
 }

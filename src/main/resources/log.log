@@ -7,3 +7,27 @@
 2021-09-08 12:05:45 INFO  MessageHibernateTest:45 - Receiver: crystal
 2021-09-08 12:05:45 INFO  MessageHibernateTest:46 - Title: Need additional details
 2021-09-08 12:05:45 INFO  MessageHibernateTest:47 - Message: Hi Crystal. I like your novel so far. I am a little lost on its description. What is a southern identity? Someone will want to know this before picking up the book and reading it. Thanks.
+2021-09-08 12:09:21 DEBUG PitchandDraftHibernateTest:30 - derrick pass
+2021-09-08 12:14:43 DEBUG PitchandDraftHibernateTest:31 - derrick pass
+2021-09-08 12:19:03 DEBUG PitchandDraftHibernateTest:33 - derrick pass
+2021-09-08 12:19:04 DEBUG PitchandDraftHibernateTest:40 - [com.SPMS.beans.Pitch@e3a3a2fa]
+2021-09-08 12:19:04 DEBUG PitchandDraftHibernateTest:41 - [com.SPMS.beans.Draft@37fd85b8]
+2021-09-08 12:19:04 INFO  PitchandDraftHibernateTest:48 - Id: 1
+2021-09-08 12:19:04 INFO  PitchandDraftHibernateTest:49 - Task type: com.SPMS.beans.TaskType@65bc720
+2021-09-08 12:19:04 INFO  PitchandDraftHibernateTest:50 - Title: Midnight Tales
+2021-09-08 12:19:04 INFO  PitchandDraftHibernateTest:51 - Genre: Genre [id=2, name=horror]
+2021-09-08 12:19:04 INFO  PitchandDraftHibernateTest:57 - Id: 2
+2021-09-08 12:19:04 INFO  PitchandDraftHibernateTest:58 - Task type: com.SPMS.beans.TaskType@5b67da0
+2021-09-08 12:19:04 INFO  PitchandDraftHibernateTest:59 - Draft: Hold on tight, you are in for a ride.
+2021-09-08 12:20:28 DEBUG PitchandDraftHibernateTest:33 - derrick pass
+2021-09-08 12:20:29 DEBUG PitchandDraftHibernateTest:40 - pitches: [com.SPMS.beans.Pitch@e3a3a2fa]
+2021-09-08 12:20:29 DEBUG PitchandDraftHibernateTest:41 - drafts: [com.SPMS.beans.Draft@37fd85b8]
+2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:47 - pitches: 
+2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:49 - Id: 1
+2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:50 - Task type: pitch
+2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:51 - Title: Midnight Tales
+2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:52 - Genre: Genre [id=2, name=horror]
+2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:57 - drafts: 
+2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:59 - Id: 2
+2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:60 - Task type: draft
+2021-09-08 12:20:29 INFO  PitchandDraftHibernateTest:61 - Draft: Hold on tight, you are in for a ride.

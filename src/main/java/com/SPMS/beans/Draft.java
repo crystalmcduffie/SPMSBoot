@@ -15,7 +15,6 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 @Entity
 @Table (name = "draft")
-//@DiscriminatorValue("1")
 @PrimaryKeyJoinColumn(name = "task_id")
 public class Draft extends Task implements Comparable<Draft>{
 
@@ -23,6 +22,9 @@ public class Draft extends Task implements Comparable<Draft>{
 	@ManyToOne
 	@JoinColumn (name="stage_id")
 	private Stage stage;
+	@OneToOne
+	@JoinColumn(name="pitch_id")
+	private Pitch pitch;
 
 	public String getDraft() {
 		return draft;
@@ -36,12 +38,17 @@ public class Draft extends Task implements Comparable<Draft>{
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
-
+	public Pitch getPitch() {
+		return pitch;
+	}
+	public void setPitch(Pitch pitch) {
+		this.pitch = pitch;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Objects.hash(draft, stage);
+		result = prime * result + Objects.hash(draft, pitch, stage);
 		return result;
 	}
 	@Override
@@ -53,7 +60,8 @@ public class Draft extends Task implements Comparable<Draft>{
 		if (getClass() != obj.getClass())
 			return false;
 		Draft other = (Draft) obj;
-		return Objects.equals(draft, other.draft) && Objects.equals(stage, other.stage);
+		return Objects.equals(draft, other.draft) && Objects.equals(pitch, other.pitch)
+				&& Objects.equals(stage, other.stage);
 	}
 	@Override
 	public int compareTo(Draft o) {

@@ -45,6 +45,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	@ManyToOne
 	@JoinColumn (name="stage_id")
 	private Stage stage;
+	@OneToOne
+	@JoinColumn (name="author_id")
+	private Author author;
 	
 	
 	public String getAuthorInfo() {
@@ -155,6 +158,14 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
+	
+	public Author getAuthor() {
+		return author;
+	}
+	
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
 
 
 	@Override
@@ -162,8 +173,8 @@ public class Pitch extends Task implements Comparable<Pitch> {
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + Arrays.hashCode(attachments);
-		result = prime * result + Objects.hash(authorInfo, description, genre, onHold, stage, storyType, tagLine,
-				tentativeCompletionDate, timestamp, title);
+		result = prime * result + Objects.hash(author, authorInfo, description, genre, onHold, stage, storyType,
+				tagLine, tentativeCompletionDate, timestamp, title);
 		return result;
 	}
 
@@ -177,9 +188,9 @@ public class Pitch extends Task implements Comparable<Pitch> {
 		if (getClass() != obj.getClass())
 			return false;
 		Pitch other = (Pitch) obj;
-		return Arrays.equals(attachments, other.attachments) && Objects.equals(authorInfo, other.authorInfo)
-				&& Objects.equals(description, other.description) && Objects.equals(genre, other.genre)
-				&& onHold == other.onHold && Objects.equals(stage, other.stage)
+		return Arrays.equals(attachments, other.attachments) && Objects.equals(author, other.author)
+				&& Objects.equals(authorInfo, other.authorInfo) && Objects.equals(description, other.description)
+				&& Objects.equals(genre, other.genre) && onHold == other.onHold && Objects.equals(stage, other.stage)
 				&& Objects.equals(storyType, other.storyType) && Objects.equals(tagLine, other.tagLine)
 				&& Objects.equals(tentativeCompletionDate, other.tentativeCompletionDate)
 				&& Objects.equals(timestamp, other.timestamp) && Objects.equals(title, other.title);

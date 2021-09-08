@@ -30,8 +30,9 @@ public class PitchHibernate extends SimpleJpaRepository<Pitch, Integer> implemen
         super(Pitch.class, em);
         this.entityManager = em;
     }
+
 	
-	public List<Pitch> getAuthorPitches(Integer id){
+	/*public List<Pitch> getAuthorPitches(Integer id){
 		Session s = hu.getSession();
 		String query = "FROM Pitch where author_id = :id";
 		Query<Pitch> q = s.createQuery(query, Pitch.class);
@@ -39,7 +40,7 @@ public class PitchHibernate extends SimpleJpaRepository<Pitch, Integer> implemen
 		List<Pitch> pitches = q.getResultList();
 		s.close();
 		return pitches;
-	}
+	}*/
 }
 
 
