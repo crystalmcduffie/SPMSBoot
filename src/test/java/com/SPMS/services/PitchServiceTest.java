@@ -13,62 +13,43 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.SPMS.beans.Author;
+import com.SPMS.beans.Editor;
 import com.SPMS.beans.Genre;
 import com.SPMS.beans.GenreCommittee;
 import com.SPMS.beans.Message;
 import com.SPMS.beans.Person;
+import com.SPMS.beans.Pitch;
 import com.SPMS.data.GenreCommitteeDAO;
 import com.SPMS.data.GenreDAO;
 import com.SPMS.services.EditorService;
 import com.SPMS.services.PersonService;
 
 @SpringBootTest
-public class GenreServiceTest {
+public class PitchServiceTest {
 	
-	private static Logger log = Logger.getLogger(GenreServiceTest.class);
+	private static Logger log = Logger.getLogger(PitchServiceTest.class);
 	
 	@Autowired
-	PersonService personService;
-	@Autowired
-	GenreCommitteeDAO gcDAO;
-	@Autowired
-	GenreDAO gDAO;
-
-	@Test
-	public void getEditorGenreCommitte() {
-		Person p = personService.getByUsername("gabriel");
-		log.debug(p.getUsername() + " " + p.getPassword() );
-		List<GenreCommittee> gcs = gcDAO.findByEditorId(p.getId());
-		for(GenreCommittee gc : gcs) {
-			assertEquals(p.getId(), gc.getEditor().getId());
-			assertEquals("gabriel", gc.getEditor().getUsername());
-		}
-		printGenreCommittees(gcs);
-	}
-	
-	@Test
-	public void getGenreByName() {
-		Genre g = gDAO.findByName("horror");
-		assertEquals(2, g.getId());
-		assertEquals("horror", g.getName());
-	}
-	
-	@Test
-	public void getGenreCommitteeByGenre() {
-		List<GenreCommittee> gcs = gcDAO.findByGenreId(2);
-		for(GenreCommittee gc : gcs) {
-			assertEquals("horror", gc.getGenre().getName());
-		}
-		printGenreCommittees(gcs);
-	}
+	PitchService pitchService;
+/*//CRUD
+	//If CreatePitch returns "insufficient points", the pitch
+	//was created and placed on hold.
+	//If it returns "pitch created" then the pitch process
+	//has started
+	//If it returns "error" then something went wrong in the DB
+	public Pitch getPitch(Integer id);
+	public Pitch createPitch(Author a, Pitch p);
+	public String calculatePriority(Pitch p);
+	public void approvePitch(Pitch p);
+	//general editor cannot be the same as the assistant editor
+	public void assignPitch(Pitch p);
+	public void updatePitch(Pitch p);
+	public void cancelPitch(Pitch p);
+	public void rejectPitch(Pitch p);
+	public List<Pitch> listPitchesInOrder(Set<Pitch> pitches);
+	public Set<Pitch> getAuthorPitches(Author a);*/
 
 
-	public static void printGenreCommittees(List<GenreCommittee> gcs) {
-		for(GenreCommittee gc : gcs) {
-			log.info("Genre: " + gc.getGenre());
-			log.info("Editor: " + gc.getEditor());
-			log.info("Status: " + gc.getEditorStatus());
-		}
-	}
 
 }

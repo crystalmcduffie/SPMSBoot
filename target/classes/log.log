@@ -83,3 +83,24 @@
 2021-09-08 13:37:17 INFO  GenreHibernateTest:70 - Genre: Genre [id=5, name=nonfiction]
 2021-09-08 13:37:17 INFO  GenreHibernateTest:71 - Editor: gabriel
 2021-09-08 13:37:17 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:39:25 INFO  GenreHibernateTest:63 - getGenreCommitteeByGenre Test: 
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: matthew
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: senior
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: thomas
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: elizabeth
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:39:25 DEBUG GenreHibernateTest:40 - thomas pass
+2021-09-08 13:39:25 INFO  GenreHibernateTest:46 - getEditorGenreCommittee Test: 
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=2, name=horror]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: thomas
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=3, name=sci-fi]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: thomas
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=4, name=adventure]
+2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: thomas
+2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: assistant

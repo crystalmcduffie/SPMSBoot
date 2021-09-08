@@ -6,8 +6,6 @@ import java.util.Set;
 import com.SPMS.beans.Author;
 import com.SPMS.beans.Editor;
 import com.SPMS.beans.Pitch;
-import com.SPMS.beans.PitchStage;
-import com.SPMS.beans.StoryType;
 
 public interface PitchService{
 //CRUD
@@ -25,10 +23,6 @@ public interface PitchService{
 	public void updatePitch(Pitch p);
 	public void cancelPitch(Pitch p);
 	public void rejectPitch(Pitch p);
-	public PitchStage getPitchStage(String name);
-	public StoryType getStoryType(String name);
-	public Set<Pitch> getApprovedPitches(Author a);
-	public Set<Pitch> getPitchesOnHold(Author a);
-	public Set<Pitch> getSeniorEditorPitches(Editor e);
 	public List<Pitch> listPitchesInOrder(Set<Pitch> pitches);
+	public Set<Pitch> getAuthorPitches(Author a);
 }

@@ -15,8 +15,7 @@ public interface DraftService{
 	public void updateDraft(Draft d);
 	public void approveDraft(Editor e, Draft d);
 	public Set<Draft> getAll();
-	public Set<Draft> getAllPendingDrafts();
-	public Set<Draft> getPendingDraftsForEditor(Editor e);
+	public void assignDraft(Editor e);
 	public List<Draft> listDraftsInOrder(Set<Draft> drafts);
 
 }
