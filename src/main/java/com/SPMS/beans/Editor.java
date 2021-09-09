@@ -11,27 +11,22 @@ public class Editor extends Person{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinTable(name="assignment",
-			joinColumns=@JoinColumn(name="editor_id"))
-	private Set<Assignment> assignments;
+	
+	public Editor(Person p){
+		this.id = p.getId();
+	}
+	
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Set<Assignment> getAssignments() {
-		return assignments;
-	}
-	public void setAssignments(Set<Assignment> assignments) {
-		this.assignments = assignments;
-	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Objects.hash(assignments, id);
+		result = prime * result + Objects.hash(id);
 		return result;
 	}
 	@Override
@@ -43,6 +38,6 @@ public class Editor extends Person{
 		if (getClass() != obj.getClass())
 			return false;
 		Editor other = (Editor) obj;
-		return Objects.equals(assignments, other.assignments) && Objects.equals(id, other.id);
+		return Objects.equals(id, other.id);
 	}
 }

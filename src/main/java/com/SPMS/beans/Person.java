@@ -29,27 +29,6 @@ public class Person {
 	@ManyToOne
 	@JoinColumn(name="role_id")
 	private Role role;
-	/*@OneToMany
-	@JoinTable(name="message",
-			joinColumns=@JoinColumn(name="sender_id"))
-	private Set<Message> sentMessages;
-	@OneToMany
-	@JoinTable(name="message",
-			joinColumns=@JoinColumn(name="receiver_id"))
-	private Set<Message> receivedMessages;
-	/*@ManyToMany
-	@JoinTable(name="assignment",
-			joinColumns=@JoinColumn(name="editor_id"),
-			inverseJoinColumns=@JoinColumn(name="task_id"))
-	private Set<Task> assignments;
-	@OneToMany
-	@JoinTable(name="pitch",
-			joinColumns=@JoinColumn(name="author_id"))
-	private Set<Pitch> pitches;
-	/*@OneToMany
-	@JoinTable(name="drafts",
-			joinColumns=@joinColumn(name=))
-	private Set<Draft> drafts;*/
 	public Integer getId() {
 		return id;
 	}
@@ -74,18 +53,6 @@ public class Person {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	/*public Set<Message> getSentMessages() {
-		return sentMessages;
-	}
-	public void setSentMessages(Set<Message> sentMessages) {
-		this.sentMessages = sentMessages;
-	}
-	public Set<Message> getReceivedMessages() {
-		return receivedMessages;
-	}
-	public void setReceivedMessages(Set<Message> receivedMessages) {
-		this.receivedMessages = receivedMessages;
-	}*/
 	@Override
 	public int hashCode() {
 		return Objects.hash(id, password, role, username);

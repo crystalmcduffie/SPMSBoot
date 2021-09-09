@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.SPMS.beans.Editor;
 import com.SPMS.data.EditorDAO;
+import com.SPMS.exceptions.IncorrectTypeException;
 
 @Service
 public class EditorServiceImpl implements EditorService {
@@ -23,14 +24,22 @@ public class EditorServiceImpl implements EditorService {
 	}
 
 	@Override
-	public void update(Editor e) {
-		editorDAO.save(e);
-		
+	public List<Editor> getAll() {
+		return editorDAO.findAll();
 	}
 
 	@Override
-	public List<Editor> getAll() {
-		return editorDAO.findAll();
+	public Editor create(Editor e) throws IncorrectTypeException {
+		if(e.getRole().getName().equals("editor")==false) {
+			IncorrectTypeException IncorrectTypeException = new IncorrectTypeException();
+			throw IncorrectTypeException;
+		}
+		return editorDAO.save(e);
+	}
+
+	@Override
+	public Editor update(Editor e) {
+		return editorDAO.save(e);
 	}
 	
 }

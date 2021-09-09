@@ -104,3 +104,7 @@
 2021-09-08 13:39:25 INFO  GenreHibernateTest:70 - Genre: Genre [id=4, name=adventure]
 2021-09-08 13:39:25 INFO  GenreHibernateTest:71 - Editor: thomas
 2021-09-08 13:39:25 INFO  GenreHibernateTest:72 - Status: assistant
+2021-09-09 17:46:01 DEBUG PersonServiceTest:54 - kate pass
+2021-09-09 17:56:57 DEBUG PersonServiceTest:54 - kate kitkat
+2021-09-09 17:58:53 DEBUG PersonServiceTest:54 - kate kitkat
+2021-09-09 17:59:43 DEBUG PersonServiceTest:54 - kate kitkat

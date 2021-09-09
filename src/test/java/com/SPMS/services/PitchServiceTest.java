@@ -50,6 +50,8 @@ public class PitchServiceTest {
 	public List<Pitch> listPitchesInOrder(Set<Pitch> pitches);
 	public Set<Pitch> getAuthorPitches(Author a);*/
 
-
+	public void createPitch() {
+		
+	}
 
 }

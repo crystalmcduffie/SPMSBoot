@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Set;
 
 import com.SPMS.beans.Editor;
+import com.SPMS.exceptions.IncorrectTypeException;
 
 public interface EditorService {
+	public Editor create(Editor e) throws IncorrectTypeException;
 	public Editor getByUsername(String username);
-	public void update(Editor ed);
+	public Editor update(Editor e);
 	public List<Editor> getAll();
 }

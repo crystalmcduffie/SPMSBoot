@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.SPMS.beans.Person;
 import com.SPMS.data.PersonDAO;
+import com.SPMS.exceptions.NonUniqueUsernameException;
 
 @Service
 public class PersonServiceImpl implements PersonService {
@@ -22,13 +23,30 @@ public class PersonServiceImpl implements PersonService {
 	}
 
 	@Override
-	public void update(Person p) {
-		personDAO.save(p);
+	public Person update(Person p) {
+		return personDAO.save(p);
 		
 	}
 
 	@Override
 	public List<Person> getAll() {
 		return personDAO.findAll();
+	}
+
+
+	@Override
+	public boolean isAuthor(Person p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Person createUser(Person p) throws NonUniqueUsernameException {
+		try {
+			p = personDAO.save(p);
+		}catch(Exception e){
+			//e.printStackTrace();
+		}
+		return p;
 	}
 }

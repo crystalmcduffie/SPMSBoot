@@ -12,6 +12,10 @@ public class Author extends Person{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
+	public Author(Person p) {
+		this.id = p.getId();
+	}
+
 	public Integer getId() {
 		return id;
 	}
