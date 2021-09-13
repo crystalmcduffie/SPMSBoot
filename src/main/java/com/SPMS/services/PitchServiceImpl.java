@@ -12,27 +12,71 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import com.SPMS.beans.Author;
-import com.SPMS.beans.AuthorPitch;
-import com.SPMS.beans.Draft;
-import com.SPMS.beans.Editor;
-import com.SPMS.beans.EditorPitch;
-import com.SPMS.beans.Genre;
-import com.SPMS.beans.GenreCommittee;
+import com.SPMS.beans.Person;
 import com.SPMS.beans.Pitch;
-import com.SPMS.beans.PitchLog;
-import com.SPMS.beans.PitchStage;
-import com.SPMS.beans.StoryType;
-import com.SPMS.data.AuthorDAO;
-import com.SPMS.data.DAOFactory;
-import com.SPMS.data.EditorDAO;
-import com.SPMS.data.GenreDAO;
-import com.SPMS.data.PitchDAO;
-import com.SPMS.data.hibernate.PitchHibernate;
 
-import sun.jvm.hotspot.oops.java_lang_Class;
 
 @Service
 public class PitchServiceImpl implements PitchService{
+
+	@Override
+	public Pitch getPitch(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Pitch createPitch(Person author, Pitch p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String calculatePriority(Pitch p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void approvePitch(Pitch p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void assignPitch(Pitch p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updatePitch(Pitch p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void cancelPitch(Pitch p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void rejectPitch(Pitch p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Pitch> listPitchesInOrder(Set<Pitch> pitches) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<Pitch> getAuthorPitches(Person author) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

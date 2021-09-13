@@ -47,7 +47,7 @@ public class Pitch extends Task implements Comparable<Pitch> {
 	private Stage stage;
 	@OneToOne
 	@JoinColumn (name="author_id")
-	private Author author;
+	private Person author;
 	
 	
 	public String getAuthorInfo() {
@@ -159,11 +159,11 @@ public class Pitch extends Task implements Comparable<Pitch> {
 		this.stage = stage;
 	}
 	
-	public Author getAuthor() {
+	public Person getAuthor() {
 		return author;
 	}
 	
-	public void setAuthor(Author author) {
+	public void setAuthor(Person author) {
 		this.author = author;
 	}
 

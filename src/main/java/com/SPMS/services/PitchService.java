@@ -3,8 +3,7 @@ package com.SPMS.services;
 import java.util.List;
 import java.util.Set;
 
-import com.SPMS.beans.Author;
-import com.SPMS.beans.Editor;
+import com.SPMS.beans.Person;
 import com.SPMS.beans.Pitch;
 
 public interface PitchService{
@@ -15,7 +14,7 @@ public interface PitchService{
 	//has started
 	//If it returns "error" then something went wrong in the DB
 	public Pitch getPitch(Integer id);
-	public Pitch createPitch(Author a, Pitch p);
+	public Pitch createPitch(Person author, Pitch p);
 	public String calculatePriority(Pitch p);
 	public void approvePitch(Pitch p);
 	//general editor cannot be the same as the assistant editor
@@ -24,5 +23,5 @@ public interface PitchService{
 	public void cancelPitch(Pitch p);
 	public void rejectPitch(Pitch p);
 	public List<Pitch> listPitchesInOrder(Set<Pitch> pitches);
-	public Set<Pitch> getAuthorPitches(Author a);
+	public Set<Pitch> getAuthorPitches(Person author);
 }

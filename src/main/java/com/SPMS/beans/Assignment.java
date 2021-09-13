@@ -32,6 +32,7 @@ public class Assignment{
 	@ManyToOne
 	@JoinColumn (name = "editor_status_id")
 	private EditorStatus editorStatus;
+	private boolean approve;
 	public Integer getId() {
 		return id;
 	}
@@ -68,9 +69,16 @@ public class Assignment{
 	public void setEditorStatus(EditorStatus editorStatus) {
 		this.editorStatus = editorStatus;
 	}
+	
+	public boolean isApprove() {
+		return approve;
+	}
+	public void setApprove(boolean approve) {
+		this.approve = approve;
+	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(complete, editor, editorStatus, id, task, timestamp);
+		return Objects.hash(approve, complete, editor, editorStatus, id, task, timestamp);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -81,7 +89,7 @@ public class Assignment{
 		if (getClass() != obj.getClass())
 			return false;
 		Assignment other = (Assignment) obj;
-		return complete == other.complete && Objects.equals(editor, other.editor)
+		return approve == other.approve && complete == other.complete && Objects.equals(editor, other.editor)
 				&& Objects.equals(editorStatus, other.editorStatus) && Objects.equals(id, other.id)
 				&& Objects.equals(task, other.task) && Objects.equals(timestamp, other.timestamp);
 	}

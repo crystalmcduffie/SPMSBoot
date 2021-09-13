@@ -13,8 +13,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.SPMS.beans.Author;
-import com.SPMS.beans.Editor;
 import com.SPMS.beans.Genre;
 import com.SPMS.beans.GenreCommittee;
 import com.SPMS.beans.Message;
@@ -22,7 +20,6 @@ import com.SPMS.beans.Person;
 import com.SPMS.beans.Pitch;
 import com.SPMS.data.GenreCommitteeDAO;
 import com.SPMS.data.GenreDAO;
-import com.SPMS.services.EditorService;
 import com.SPMS.services.PersonService;
 
 @SpringBootTest

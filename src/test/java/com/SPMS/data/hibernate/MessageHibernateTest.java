@@ -13,7 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.SPMS.beans.Message;
 import com.SPMS.beans.Person;
-import com.SPMS.services.EditorService;
 import com.SPMS.services.PersonService;
 
 @SpringBootTest
@@ -21,8 +20,6 @@ public class MessageHibernateTest {
 	
 	private static Logger log = Logger.getLogger(MessageHibernateTest.class);
 	
-	@Autowired
-	EditorService editorService;
 	@Autowired
 	PersonService personService;
 	@Autowired

@@ -19,7 +19,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

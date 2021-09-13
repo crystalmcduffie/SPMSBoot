@@ -19,7 +19,6 @@ import com.SPMS.beans.Message;
 import com.SPMS.beans.Person;
 import com.SPMS.data.GenreCommitteeDAO;
 import com.SPMS.data.GenreDAO;
-import com.SPMS.services.EditorService;
 import com.SPMS.services.PersonService;
 
 @SpringBootTest
