@@ -2,14 +2,8 @@ package com.SPMS.services;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.sql.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -31,12 +25,6 @@ public class PersonServiceTest {
 	PersonService personService;
 	@Autowired
 	RoleDAO roleDAO;
-
-	/*	public Person getByUsername(String username);
-	public void update(Person p);
-	public List<Person> getAll();
-	public boolean isAuthor(Person p);
-	public Person createUser(Person p) throws NonUniqueUsernameException;*/
 	
 	@Test
 	@Order(1)

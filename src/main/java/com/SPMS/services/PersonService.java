@@ -11,4 +11,7 @@ public interface PersonService {
 	public List<Person> getAll();
 	public boolean isAuthor(Person p);
 	public Person createUser(Person p);
+	public void deleteUser(Person p);
+	public int calculatePoints(Person author);
 }
+

@@ -5,5 +5,5 @@ import com.SPMS.beans.StoryType;
 
 @Repository
 public interface StoryTypeDAO extends JpaRepository<StoryType, Integer>{
-
+	public StoryType findByName(String name);
 }

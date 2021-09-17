@@ -10,19 +10,23 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.SPMS.beans.Person;
 import com.SPMS.beans.Pitch;
+import com.SPMS.data.PitchDAO;
 
 
 @Service
 public class PitchServiceImpl implements PitchService{
+	
+	@Autowired
+	PitchDAO pitchDAO;
 
 	@Override
 	public Pitch getPitch(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return pitchDAO.getOne(id);
 	}
 
 	@Override
@@ -74,9 +78,8 @@ public class PitchServiceImpl implements PitchService{
 	}
 
 	@Override
-	public Set<Pitch> getAuthorPitches(Person author) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Pitch> getAuthorPitches(Person author) {
+		return pitchDAO.findByAuthorId(author.getId());
 	}
 
 }

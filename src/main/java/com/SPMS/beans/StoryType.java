@@ -10,8 +10,7 @@ import javax.persistence.Table;
 public class StoryType {
 	@Id
 	Integer id;
-	@Column (name = "stype")
-	String storyType;
+	String name;
 	Integer points;
 	
 	public Integer getId() {
@@ -20,11 +19,11 @@ public class StoryType {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getStoryType() {
-		return storyType;
+	public String getName() {
+		return name;
 	}
-	public void setStoryType(String storyType) {
-		this.storyType = storyType;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public Integer getPoints() {
 		return points;
@@ -38,7 +37,7 @@ public class StoryType {
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((points == null) ? 0 : points.hashCode());
-		result = prime * result + ((storyType == null) ? 0 : storyType.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 	@Override
@@ -60,16 +59,16 @@ public class StoryType {
 				return false;
 		} else if (!points.equals(other.points))
 			return false;
-		if (storyType == null) {
-			if (other.storyType != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!storyType.equals(other.storyType))
+		} else if (!name.equals(other.name))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "StoryType [id=" + id + ", storyType=" + storyType + ", points=" + points + "]";
+		return "StoryType [id=" + id + ", name=" + name + ", points=" + points + "]";
 	}
 	
 	

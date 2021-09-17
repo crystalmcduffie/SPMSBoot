@@ -1,15 +1,7 @@
-CREATE TRIGGER before_insert_genre_committee
-BEFORE INSERT ON genre_committee
-FOR EACH STATEMENT
-BEGIN
-   IF 
-	(SELECT name from person join role on person.role_id = role.id where person.id = NEW.editor_id)
-	= 'editor'
-THEN
-	INSERT INTO genre_committee(genre_id,editor_id,editor_status_id)
-        VALUES(NEW.genre_id,NEW.editor_id,NEW.editor_status_id);
-    END IF;
-END;
+create trigger before_insert_genre_committee before
+insert
+    on
+    "SPMS2".genre_committee for each row execute function "SPMS2".before_insert_genre_committee()
 
 create or replace procedure before_insert_genre_committee(genre_id int, editor_id int, editor_status_id int) as $$ 
 declare
@@ -33,11 +25,17 @@ $$
 declare
 	role_name varchar;
 	editor_id int;
+	status_name varchar;
+	editor_status_id int;
 begin
 	select new.editor_id into editor_id;
 	select name into role_name from person join role on person.role_id = role.id where person.id = editor_id;
-	
-	if role_name = 'editor' then 
+	select new.editor_status_id into editor_status_id;
+	select name into status_name from editor_status where id = editor_status_id;
+	if status_name = 'general' then
+		raise exception 'Editor status cannot be general in a genre committee';
+	end if;
+	if role_name = 'editor' and status_name <> 'general' then
 		insert into genre_committee(genre_id,editor_id,editor_status_id) values(new.genre_id,new.editor_id,new.editor_status_id);
     else
     	raise exception 'Person % must be an editor', editor_id;

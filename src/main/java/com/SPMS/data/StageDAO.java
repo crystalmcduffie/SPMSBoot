@@ -5,5 +5,5 @@ import com.SPMS.beans.Stage;
 
 @Repository
 public interface StageDAO extends JpaRepository<Stage, Integer>{
-
+	public Stage findByName(String name);
 }

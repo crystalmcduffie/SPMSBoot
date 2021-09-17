@@ -43,4 +43,9 @@ public class PersonServiceImpl implements PersonService {
 	public Person createUser(Person p) {
 		return p = personDAO.save(p);
 	}
+	
+	@Override
+	public void deleteUser(Person p) {
+		personDAO.delete(p);
+	}
 }

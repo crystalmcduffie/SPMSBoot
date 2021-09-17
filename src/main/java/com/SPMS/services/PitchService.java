@@ -23,5 +23,6 @@ public interface PitchService{
 	public void cancelPitch(Pitch p);
 	public void rejectPitch(Pitch p);
 	public List<Pitch> listPitchesInOrder(Set<Pitch> pitches);
-	public Set<Pitch> getAuthorPitches(Person author);
+	public List<Pitch> getAuthorPitches(Person author);
+	public int calculatePoints(Person author);
 }
